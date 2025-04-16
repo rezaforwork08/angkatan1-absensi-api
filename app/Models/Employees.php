@@ -15,10 +15,11 @@ class Employees extends Model
         'gender'
     ];
 
-    protected $appends = ['gender_label', 'is_active_class', 'is_active_label'];
+    protected $appends = ['gender_label',  'is_active_label'];
 
-    public function getGenderTextAttribute()
+    public function getGenderLabelAttribute()
     {
+
         switch ($this->gender) {
             case '1':
                 $label = "Man";
@@ -32,7 +33,7 @@ class Employees extends Model
         return $label;
     }
 
-    public function getIsActiveTextAttribute()
+    public function getIsActiveLabelAttribute()
     {
         switch ($this->is_active) {
             case '1':

@@ -69,11 +69,14 @@ class AuthController extends Controller
 
     public function me()
     {
+
         try {
             $user = auth('api')->user();
+            $employee = auth('api')->user()->employee;
             return response()->json([
                 'message' => 'Fetch profile user success',
                 'user'   => $user,
+
             ]);
         } catch (\Throwable $th) {
             return response()->json(['error' => $th->getMessage()], 500);
