@@ -12,7 +12,7 @@ class Employees extends Model
         'phone',
         'address',
         'is_active',
-        'gender'
+        'gender',
     ];
 
     protected $appends = ['gender_label',  'is_active_label'];
